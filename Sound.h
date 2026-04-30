@@ -19,7 +19,6 @@ class Sound
         std::string getType() const;
         std::string getArtist() const;
         double getDateAdded() const;
-        sf::Music getMusic() const;
 
         // Setters
         void setName(const std::string& name);
