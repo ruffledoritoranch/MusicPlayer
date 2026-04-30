@@ -2,29 +2,33 @@
  * Sample API for <sound>
  */
 
-#ifndef sound
-#define sound
+#ifndef SOUND_H
+#define SOUND_H
 
-class sound /* is a */ : PARENT_CLASS
+#include <string>
+
+class Sound
 {
-    /**
-     * At a minimum, include:
-     * 1) 1 or more Constructor (Apply Rule of 3 if needed); 
-     * 2) Public Functions (minimum x2) including a non-trivial function
-     *    (e.g. not a simple getter/setter)
-     * 3) Private Data Members (minimum x2)
-     */
-public:
-    sound();
-    sound(int first, std::string second);
+    public:
+        Sound();
 
-    /* may be virtual */ bool do_something(string s);
-    int get_my_int();
+        // Getters
+        std::string getName() const;
+        double getLength() const;
+        std::string getType() const;
+        std::string getArtist() const;
+        double getDateAdded() const;
 
-private:
+        // Setters
+        void setName(const std::string& name);
+        void setArtist(const std::string& artist);
 
-    int my_int;
-    std:string my_str;
+    private:
+        std::string name;
+        double length;
+        std::string type;
+        std::string artist;
+        double dateAdded;
 };
 
 #endif 
