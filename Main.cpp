@@ -61,7 +61,7 @@ int main()
                 }else if (input == "I" || input == "i"){
                     currentSound->displayInfo();
                 }else if (input == "A" || input == "a"){
-                    std::cout << "Will add. \n";
+                    std::cout << "Will add here. \n";
                 }
 
                 delete currentSound;
