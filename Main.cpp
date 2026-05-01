@@ -53,13 +53,15 @@ int main()
 
                 //add here function to add song to certain playlist
                 
-                std::cout << "Next Step: 'P' to play song, 'I' for displaying song info, anything else to move on. \n";
+                std::cout << "Next Step: 'P' to play song, 'I' for displaying song info, 'A' to add to your playlist. Type anything else to move on. \n";
                 std::getline(std::cin, input);
                 
                 if (input == "P" || input == "p"){
                     currentSound->playMusic();
                 }else if (input == "I" || input == "i"){
                     currentSound->displayInfo();
+                }else if (input == "A" || input == "a"){
+                    std::cout << "Will add. \n";
                 }
 
                 delete currentSound;
