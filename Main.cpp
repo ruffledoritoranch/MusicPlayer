@@ -12,6 +12,8 @@ int main()
 {   
     std::string input;
     bool programEnded = false;
+
+    
     while (!programEnded){
         std::cout << "Enter file name, enter 'EXIT' to quit.\n";
 

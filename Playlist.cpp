@@ -14,7 +14,7 @@ void Playlist:: addSound(const std::shared_ptr<Sound>& sound){
     playlist.push_back(sound);
 }
 
-void Playlist::removeSound(const std::shared_ptr<Sound>& sound) {
+void Playlist::removeSound(size_t index) {
     if(index < 0 || index > playlist.size()){
         throw std::out_of_range("Index out of bounds");
     }
@@ -46,8 +46,8 @@ std::shared_ptr<Sound> Playlist::getSound(size_t index) const {
     return playlist[index];
 }
 
-void Playlist::play() const{
-    for(const sound : playlist){
+void Playlist::play() const {
+    for (const auto& sound : playlist) {
         sound->playMusic();
     }
 }
