@@ -39,6 +39,18 @@ int main()
                 }
                 
                 Sound currentSound(p.string(), (p.stem().string()), artistInput);
+                
+                //add here function to add song to certain playlist
+                
+                std::cout << "Next Step: 'P' to play song, 'I' for displaying song info, anything else to move on. \n";
+                std::getline(std::cin, input);
+                
+                if (input == "P" || input == "p"){
+                    currentSound.playMusic();
+                }else if (input == "I" || input == "i"){
+                    currentSound.displayInfo();
+                }
+
             }
 
 
