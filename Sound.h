@@ -7,15 +7,16 @@
 
 #include <string>
 #include <SFML/Audio.hpp>
+#include <ctime>
 
 class Sound
 {
     public:
-        Sound(std::string name);
+        Sound(std::string soundPath, std::string name, std::string artist);
 
         // Getters
         std::string getName() const;
-        double getDateAdded() const;
+        std::time_t getDateAdded() const;
 
         // Setters
         void setName(const std::string& name);
@@ -27,11 +28,9 @@ class Sound
 
     private:
         std::string name;
-        double length;
-        std::string type;
         std::string artist;
-        double dateAdded;
-        sf::Music sound;
+        std::time_t timeAdded;
+        std::string soundPath;
 
 };
 

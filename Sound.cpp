@@ -1,13 +1,18 @@
 #include "Sound.h"
 #include <string>
 #include <SFML/Audio.hpp>
+#include <ctime>
 
 using namespace std;
 
-// Constructor
-Sound::Sound(std::string name)
+// Constructor & 
+Sound::Sound(std::string soundPath, std::string name, std::string artist)
 {
-    // TODO: initialize members
+    this->soundPath = soundPath;
+    this->name = name;
+    std::time_t now = std::time(nullptr);
+    this->timeAdded = now;
+    this->artist = artist;
 }
 
 // Getters
@@ -17,10 +22,12 @@ std::string Sound::getName() const
     return "";
 }
 
-double Sound::getDateAdded() const
+std::time_t Sound::getDateAdded() const
 {
     // TODO
-    return 0.0;
+    std::time_t now = std::time(nullptr);
+    std::time_t timeNow = now;
+    return timeNow;
 }
 
 
