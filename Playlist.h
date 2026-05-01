@@ -23,7 +23,7 @@ public:
 
     size_t size() const;
     bool empty() const;
-    std::shared_ptr<Track> getSound(size_t index) const;
+    std::shared_ptr<Sound> getSound(size_t index) const;
 
 
 private:
