@@ -15,26 +15,12 @@ int main()
 
     
     while (!programEnded){
-        std::cout << "Enter file name, enter 'p' to manage Playlist, enter 'EXIT' to quit.\n";
+        std::cout << "Enter file name, enter 'EXIT' to quit.\n";
 
         std::getline(std::cin, input);
         if (input == "EXIT"){
             //player exit
             programEnded = true;
-        }else if (input == "P"){
-            std::cout << "Enter 'p' to play, enter 'r' to remove by index, enter 'c' to clear playlist, enter 's' to shuffle.\n";
-            std::getline(std::cin, input);
-            if (input == "p"){
-
-            }else if (input == "r"){
-
-            }else if (input == "c"){
-
-            }else if (input == "s"){
-                
-            }
-
-
         }else{
             sf::Music currentLoadingMusic;
             if (!currentLoadingMusic.openFromFile("SoundLibrary/" + input)){
@@ -69,7 +55,7 @@ int main()
 
                 //add here function to add song to certain playlist
                 
-                std::cout << "Next Step: 'P' to play song, 'I' for displaying song info, 'A' to add to your playlist. Type anything else to move on. \n";
+                std::cout << "Next Step: 'P' to play song, 'I' for displaying song info, 'A' to add to your playlist, 'S' to shuffle playlist. Type anything else to move on. \n";
                 std::getline(std::cin, input);
                 
                 if (input == "P" || input == "p"){
@@ -78,8 +64,14 @@ int main()
                     currentSound->displayInfo();
                 }else if (input == "A" || input == "a"){
                     std::cout << "Will add here. \n";
+                }else if(input == "S" || input == "s"){
+                    cout << "Shuffling playlist...\n";
+                    playlist.shuffle();
+                }else if(input == "R" || input == "r"){
+                    cout << "enter index to remove  \n ";
+                    cin >> index;
+                    playlist.removeSound(index);
                 }
-
                 delete currentSound;
 
             }
