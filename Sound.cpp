@@ -2,6 +2,8 @@
 #include <string>
 #include <SFML/Audio.hpp>
 
+using namespace std;
+
 // Constructor
 Sound::Sound(std::string name)
 {
@@ -10,24 +12,6 @@ Sound::Sound(std::string name)
 
 // Getters
 std::string Sound::getName() const
-{
-    // TODO
-    return "";
-}
-
-double Sound::getLength() const
-{
-    // TODO
-    return 0.0;
-}
-
-std::string Sound::getType() const
-{
-    // TODO
-    return "";
-}
-
-std::string Sound::getArtist() const
 {
     // TODO
     return "";
@@ -57,4 +41,10 @@ void Sound::setArtist(const std::string& artist)
 void Sound::playMusic()
 {
     // TODO
+}
+
+std::string Sound::displayInfo()
+{
+    // displays various sound properties through text.
+    return "";
 }

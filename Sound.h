@@ -15,9 +15,6 @@ class Sound
 
         // Getters
         std::string getName() const;
-        double getLength() const;
-        std::string getType() const;
-        std::string getArtist() const;
         double getDateAdded() const;
 
         // Setters
@@ -26,6 +23,7 @@ class Sound
 
         // Play
         void playMusic();
+        std::string displayInfo();
 
     private:
         std::string name;
