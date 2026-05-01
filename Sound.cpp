@@ -2,6 +2,7 @@
 #include <string>
 #include <SFML/Audio.hpp>
 #include <ctime>
+#include <iostream>
 
 using namespace std;
 
@@ -18,40 +19,54 @@ Sound::Sound(std::string soundPath, std::string name, std::string artist)
 // Getters
 std::string Sound::getName() const
 {
-    // TODO
-    return "";
+    return (this->name);
 }
 
 std::time_t Sound::getDateAdded() const
 {
-    // TODO
-    std::time_t now = std::time(nullptr);
-    std::time_t timeNow = now;
-    return timeNow;
+    return (this->timeAdded);
 }
 
 
 // Setters
-void Sound::setName(const std::string& name)
+void Sound::setName(const std::string name)
 {
+    this->name = name;
     // TODO
 }
 
 
-void Sound::setArtist(const std::string& artist)
+void Sound::setArtist(const std::string artist)
 {
-    // TODO
+    this->artist = artist;
 }
 
 // Play
 
 void Sound::playMusic()
 {
-    // TODO
+    // Play audio
+
+    sf::Music currentLoadingMusic;
+
+    if (!currentLoadingMusic.openFromFile(this->soundPath)){
+        //audio cannot be found
+        std::cout << "Failed to load audio file!\n";
+    }else{
+       currentLoadingMusic.play();
+        std::cout << "Playing audio " << this->name << "\n";
+        std::cout << "Press ENTER to stop\n";
+
+        // Keep program alive while music plays
+        std::cin.get();
+    }
 }
 
-std::string Sound::displayInfo()
+void Sound::displayInfo()
 {
     // displays various sound properties through text.
-    return "";
+    std::cout << "Name of Song: " << this->name << "\n";
+    std::cout << "Artist: " << this->artist << "\n";
+    std::cout << "Time Added " << this->timeAdded << "\n";
+    std::cout << "Path " << this->soundPath << "\n";
 }

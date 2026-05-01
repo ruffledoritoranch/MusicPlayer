@@ -39,15 +39,6 @@ int main()
                 }
                 
                 Sound currentSound(p.string(), (p.stem().string()), artistInput);
-
-
-                // Play audio
-                currentLoadingMusic.play();
-                std::cout << "Playing audio " << input << "\n";
-                std::cout << "Press ENTER to stop\n";
-
-                // Keep program alive while music plays
-                std::cin.get();
             }
 
 

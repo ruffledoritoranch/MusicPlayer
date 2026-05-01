@@ -19,12 +19,12 @@ class Sound
         std::time_t getDateAdded() const;
 
         // Setters
-        void setName(const std::string& name);
-        void setArtist(const std::string& artist);
+        void setName(const std::string name);
+        void setArtist(const std::string artist);
 
         // Play
         void playMusic();
-        std::string displayInfo();
+        void displayInfo();
 
     private:
         std::string name;
