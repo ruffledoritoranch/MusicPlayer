@@ -4,6 +4,7 @@
 #include <filesystem>
 
 #include "Sound.h"
+#include "Podcast.h"
 
 using namespace std;
 
@@ -38,18 +39,30 @@ int main()
                     }
                 }
                 
-                Sound currentSound(p.string(), (p.stem().string()), artistInput);
-                
+
+                std::cout << "Is it podcast? Type in 'Y' if so. \n";
+                std::getline(std::cin, input);
+
+                Sound* currentSound = nullptr;
+
+                if (input == "Y"){
+                    currentSound = new Podcast(p.string(), (p.stem().string()), artistInput);
+                }else{
+                    currentSound = new Sound(p.string(), (p.stem().string()), artistInput);
+                }
+
                 //add here function to add song to certain playlist
                 
                 std::cout << "Next Step: 'P' to play song, 'I' for displaying song info, anything else to move on. \n";
                 std::getline(std::cin, input);
                 
                 if (input == "P" || input == "p"){
-                    currentSound.playMusic();
+                    currentSound->playMusic();
                 }else if (input == "I" || input == "i"){
-                    currentSound.displayInfo();
+                    currentSound->displayInfo();
                 }
+
+                delete currentSound;
 
             }
 

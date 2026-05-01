@@ -11,6 +11,12 @@
 
 class Sound
 {
+    protected:
+        std::string name;
+        std::string artist;
+        std::time_t timeAdded;
+        std::string soundPath;
+
     public:
         Sound(std::string soundPath, std::string name, std::string artist);
 
@@ -23,14 +29,8 @@ class Sound
         void setArtist(const std::string artist);
 
         // Play
-        void playMusic();
-        void displayInfo();
-
-    private:
-        std::string name;
-        std::string artist;
-        std::time_t timeAdded;
-        std::string soundPath;
+        virtual void playMusic();
+        virtual void displayInfo();
 
 };
 
