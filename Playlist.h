@@ -30,5 +30,3 @@ private:
     std::string name;
     std::vector<std::shared_ptr<Sound>> playlist;
 };
-
-#endif // PLAYLIST_H
