@@ -15,12 +15,26 @@ int main()
 
     
     while (!programEnded){
-        std::cout << "Enter file name, enter 'EXIT' to quit.\n";
+        std::cout << "Enter file name, enter 'p' to manage Playlist, enter 'EXIT' to quit.\n";
 
         std::getline(std::cin, input);
         if (input == "EXIT"){
             //player exit
             programEnded = true;
+        }else if (input == "P"){
+            std::cout << "Enter 'p' to play, enter 'r' to remove by index, enter 'c' to clear playlist, enter 's' to shuffle.\n";
+            std::getline(std::cin, input);
+            if (input == "p"){
+
+            }else if (input == "r"){
+
+            }else if (input == "c"){
+
+            }else if (input == "s"){
+                
+            }
+
+
         }else{
             sf::Music currentLoadingMusic;
             if (!currentLoadingMusic.openFromFile("SoundLibrary/" + input)){
